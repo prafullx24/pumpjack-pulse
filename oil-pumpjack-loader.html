@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Pumpjack Loader</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #463E41;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        .pumpjack-svg {
+            width: 300px;
+            height: 200px;
+        }
+
+        .loading-text {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        /* Pumpjack Animation Classes */
+        .crank {
+            transform-origin: 200px 120px;
+            animation: rotate 2s linear infinite;
+        }
+
+        .connecting-rod {
+            transform-origin: 200px 120px;
+            animation: connectingRod 2s linear infinite;
+        }
+
+        .walking-beam {
+            transform-origin: 150px 100px;
+            animation: walkingBeam 2s linear infinite;
+        }
+
+        .horsehead {
+            transform-origin: 150px 100px;
+            animation: walkingBeam 2s linear infinite;
+        }
+
+        .polished-rod {
+            animation: polishedRod 2s linear infinite;
+        }
+
+        .ground {
+            fill: #e8d5b7;
+        }
+
+        .sky {
+            fill: #87CEEB;
+        }
+
+        .structure {
+            fill: #222;
+        }
+
+        .crank-color {
+            fill: #c33;
+        }
+
+        .beam-color {
+            fill: #222;
+        }
+
+        .horsehead-color {
+            fill: #c33;
+            stroke: #222;
+            stroke-width: 2;
+        }
+
+        .rod-color {
+            stroke: #666;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        .vegetation {
+            fill: #4a7c59;
+        }
+
+        /* Keyframe Animations */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes connectingRod {
+            0% { transform: rotate(0deg) translateX(25px); }
+            25% { transform: rotate(90deg) translateX(25px); }
+            50% { transform: rotate(180deg) translateX(25px); }
+            75% { transform: rotate(270deg) translateX(25px); }
+            100% { transform: rotate(360deg) translateX(25px); }
+        }
+
+        @keyframes walkingBeam {
+            0% { transform: rotate(-8deg); }
+            25% { transform: rotate(8deg); }
+            50% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+            100% { transform: rotate(-8deg); }
+        }
+
+        @keyframes polishedRod {
+            0% { transform: translateY(0px); }
+            25% { transform: translateY(-15px); }
+            50% { transform: translateY(0px); }
+            75% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <svg class="pumpjack-svg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet">
+            <!-- Sky Background -->
+            <rect x="0" y="0" width="400" height="140" class="sky"/>
+            
+            <!-- Ground -->
+            <rect x="0" y="140" width="400" height="60" class="ground"/>
+            
+            <!-- Small vegetation/bushes -->
+            <ellipse cx="50" cy="150" rx="15" ry="8" class="vegetation"/>
+            <ellipse cx="320" cy="150" rx="12" ry="6" class="vegetation"/>
+            <ellipse cx="350" cy="155" rx="10" ry="5" class="vegetation"/>
+            
+            <!-- Main Support Structure -->
+            <g class="structure">
+                <!-- Base foundation -->
+                <rect x="140" y="140" width="20" height="15" class="structure"/>
+                
+                <!-- Main vertical support -->
+                <rect x="147" y="100" width="6" height="40" class="structure"/>
+                
+                <!-- Support beam base -->
+                <rect x="135" y="95" width="30" height="8" class="structure"/>
+                
+                <!-- Fulcrum support -->
+                <polygon points="145,100 155,100 150,85" class="structure"/>
+            </g>
+            
+            <!-- Walking Beam (main horizontal beam) -->
+            <g class="walking-beam">
+                <rect x="80" y="97" width="140" height="6" class="beam-color"/>
+                <!-- Fulcrum connection point -->
+                <circle cx="150" cy="100" r="4" class="structure"/>
+            </g>
+            
+            <!-- Horsehead (front counterweight) -->
+            <g class="horsehead">
+                <ellipse cx="85" cy="100" rx="15" ry="25" class="horsehead-color"/>
+                <!-- Small connection detail -->
+                <circle cx="85" cy="100" r="3" class="structure"/>
+            </g>
+            
+            <!-- Polished Rod (vertical rod going down) -->
+            <g class="polished-rod">
+                <line x1="85" y1="125" x2="85" y2="180" class="rod-color"/>
+                <!-- Rod guide/connection -->
+                <rect x="82" y="123" width="6" height="4" class="structure"/>
+            </g>
+            
+            <!-- Crank and Motor Assembly -->
+            <g class="structure">
+                <!-- Motor base -->
+                <rect x="185" y="125" width="30" height="20" class="structure"/>
+                <!-- Motor housing -->
+                <rect x="190" y="115" width="20" height="10" class="structure"/>
+            </g>
+            
+            <!-- Rotating Crank -->
+            <g class="crank">
+                <!-- Crank arm -->
+                <rect x="198" y="118" width="25" height="4" class="crank-color"/>
+                <!-- Crank center -->
+                <circle cx="200" cy="120" r="3" class="structure"/>
+                <!-- Crank end weight -->
+                <circle cx="223" cy="120" r="4" class="crank-color"/>
+            </g>
+            
+            <!-- Connecting Rod -->
+            <g class="connecting-rod">
+                <!-- Rod connecting crank to beam -->
+                <line x1="223" y1="120" x2="215" y2="100" class="rod-color"/>
+                <!-- Connection points -->
+                <circle cx="223" cy="120" r="2" class="structure"/>
+                <circle cx="215" cy="100" r="2" class="structure"/>
+            </g>
+            
+            <!-- Additional structural details -->
+            <g class="structure">
+                <!-- Support braces -->
+                <line x1="140" y1="140" x2="130" y2="120" stroke="#222" stroke-width="2"/>
+                <line x1="160" y1="140" x2="170" y2="120" stroke="#222" stroke-width="2"/>
+                
+                <!-- Base platform -->
+                <rect x="120" y="150" width="80" height="5" class="structure"/>
+            </g>
+        </svg>
+        
+        <div class="loading-text">Loading...</div>
+    </div>
+</body>
+</html>
