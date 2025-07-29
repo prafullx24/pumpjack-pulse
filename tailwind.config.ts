@@ -84,11 +84,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pumpjackCycle': {
+					'0%': { 'background-image': "url('/lovable-uploads/180a713f-81f6-4fdc-baac-8ee99d21d64b.png')" },
+					'10%': { 'background-image': "url('/lovable-uploads/343068e1-9f3e-4b49-9989-4a8256e466c2.png')" },
+					'20%': { 'background-image': "url('/lovable-uploads/759ce247-3df1-4e2a-9e17-1bdade0b54e9.png')" },
+					'30%': { 'background-image': "url('/lovable-uploads/05a5a571-5d96-423d-b497-326261f86c85.png')" },
+					'40%': { 'background-image': "url('/lovable-uploads/6ad7956c-f0c9-46f4-98bb-559d0ce4019d.png')" },
+					'50%': { 'background-image': "url('/lovable-uploads/bbb321de-804d-4b03-9083-38f68e210e4b.png')" },
+					'60%': { 'background-image': "url('/lovable-uploads/10d66042-ee84-48ba-bbc3-cdea319cb772.png')" },
+					'70%': { 'background-image': "url('/lovable-uploads/7052744a-58a7-40fd-8fdb-24d64973fd0e.png')" },
+					'80%': { 'background-image': "url('/lovable-uploads/a7a43252-0977-4be6-be31-b75b6d7bb1b8.png')" },
+					'90%': { 'background-image': "url('/lovable-uploads/27494ea9-8fbc-4f5f-8d9d-323da7fdf1af.png')" },
+					'100%': { 'background-image': "url('/lovable-uploads/180a713f-81f6-4fdc-baac-8ee99d21d64b.png')" }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pumpjack-cycle': 'pumpjackCycle 2s steps(10) infinite'
 			}
 		}
 	},
