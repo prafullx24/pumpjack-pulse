@@ -16,8 +16,8 @@ const OilPumpjackLoader = () => {
       {/* Optional loading dots animation */}
       <div className="flex space-x-1 mt-2">
         <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
-        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
-        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
+        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '1ms'}}></div>
+        <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '2ms'}}></div>
       </div>
       
     </div>
